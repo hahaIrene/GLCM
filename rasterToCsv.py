@@ -2,15 +2,15 @@ from PIL import Image
 import numpy as np
 
 # 定義檔案路徑和檔案名稱
-file_path = r'./data'
+file_path = r'./data/'
 file_names = ['red.tif', 'blue.tif', 'green.tif', 'nir.tif',
               'Var_red.tif', 'Var_blue.tif', 'Var_green.tif', 'Var_nir.tif',
               'Cont_red.tif', 'Cont_blue.tif', 'Cont_green.tif', 'Cont_nir.tif',
-              'Corelation_red', 'Corelation_blue', 'Corelation_green', 'Corelation_nir',
+              'Corelation_red.tif', 'Corelation_blue.tif', 'Corelation_green.tif', 'Corelation_nir.tif',
               'Homo_red.tif', 'Homo_blue.tif', 'Homo_green.tif', 'Homo_nir.tif',
               'Var_red_90.tif', 'Var_blue_90.tif', 'Var_green_90.tif', 'Var_nir_90.tif',
               'Cont_red_90.tif', 'Cont_blue_90.tif', 'Cont_green_90.tif', 'Cont_nir_90.tif',
-              'Corelation_red_90', 'Corelation_blue_90', 'Corelation_green_90', 'Corelation_nir_90',
+              'Corelation_red_90.tif', 'Corelation_blue_90.tif', 'Corelation_green_90.tif', 'Corelation_nir_90.tif',
               'Homo_red_90.tif', 'Homo_blue_90.tif', 'Homo_green_90.tif', 'Homo_nir_90.tif',
               ]
 
