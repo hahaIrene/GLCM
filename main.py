@@ -23,7 +23,7 @@ if __name__ == '__main__':
     # step = [2, 4, 8, 16] # step
     # angle = [0, np.pi/4, np.pi/2, np.pi*3/4] # angle or direction
     step = [2]
-    angle = [0]
+    angle = [np.pi/2]
     print('-------------------1. Load Data---------------------')
     image = r"./data/red.tif"
     img = np.array(Image.open(image)) # If the image has multi-bands, it needs to be converted to grayscale image
@@ -38,22 +38,25 @@ if __name__ == '__main__':
             glcm_cut = np.zeros((nbit, nbit, h, w), dtype=np.float32)
             glcm_cut = glcm[:, :, i, j, :, :]
             #mean = get_glcm.calcu_glcm_mean(glcm_cut, nbit)
-            #variance = get_glcm.calcu_glcm_variance(glcm_cut, nbit)
+            #留
+            variance = get_glcm.calcu_glcm_variance(glcm_cut, nbit)
+            #留
             #homogeneity = get_glcm.calcu_glcm_homogeneity(glcm_cut, nbit)
+            #留
             #contrast = get_glcm.calcu_glcm_contrast(glcm_cut, nbit)
             #dissimilarity = get_glcm.calcu_glcm_dissimilarity(glcm_cut, nbit)
             #entropy = get_glcm.calcu_glcm_entropy(glcm_cut, nbit)
             #energy = get_glcm.calcu_glcm_energy(glcm_cut, nbit)
-            correlation = get_glcm.calcu_glcm_correlation(glcm_cut, nbit)
+            #correlation = get_glcm.calcu_glcm_correlation(glcm_cut, nbit)
             # Auto_correlation = get_glcm.calcu_glcm_Auto_correlation(glcm_cut, nbit)
             print("correlation end")
 
     # list to NumPy array
-    mean_array = np.array(correlation)
+    mean_array = np.array(variance)
 
     # save as tiff
-    io.imsave(r"./Result/0/Corelation_red.tif", mean_array)
-    print("Saved glcm_correlation.tif")
+    io.imsave(r"./Result/90/Var_red_90.tif", mean_array)
+    print("Saved glcm_variancey.tif")
     # print('---------------4. Display and Result----------------')
     # plt.figure(figsize=(10, 4.5))
     # font = {'family' : 'Times New Roman',
